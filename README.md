@@ -2,12 +2,14 @@
 
 [![Build Status](https://travis-ci.org/nassor/mongoose-history.svg?branch=master)](https://travis-ci.org/nassor/mongoose-history)
 
-Keeps a history of all changes of a document.
+Keeps a history of all changes of a document (And the user who made those).
+
+THIS IS A FORK FROM [mongoose-history](https://www.npmjs.com/package/mongoose-history)
 
 ## Installation
 
 ```bash
-npm install mongoose-history
+npm install mongoose-history-user
 ```
 
 Or add it to your package.json
@@ -89,6 +91,38 @@ var options = {
 };
 PostSchema.plugin(history,options);
 module.exports = mongoose.model('Post_meta', PostSchema);
+```
+
+### Store the user that made the change (from req.user)
+This will add a modifiedBy field to your documents in the history model.
+
+First set a context in any middleware: 
+
+```javascript
+var contextService = require('request-context');
+ 
+// wrap requests in the 'request' namespace
+app.use(contextService.middleware('request'));
+ 
+// set some object from the request object on the context
+// to automatically save it when a document changes
+app.use(function (req, res, next) {
+    contextService.setContext('request:userInfo', req.user);
+    next();
+});
+```
+
+Set the type of the 'modifiedBy' field and the contextPath setted before (You can set all the user object or a reference, it's up to you):
+
+```javascript
+var options = {
+    modifiedBy: {
+        schemaType: mongoose.Schema.Types.ObjectId, // Can be String, ObjectId, etc.
+        contextPath: 'request:userInfo'
+    }
+};
+
+PostSchema.plugin(mongooseHistory, options);
 ```
 
 ### Statics
