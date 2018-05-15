@@ -1,6 +1,6 @@
 {
   "name": "mongoose-history-user",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Keeps a history of all changes of a document (And the user who made those)",
   "main": "lib/mongoose-history.js",
   "files": [
