@@ -1,7 +1,7 @@
 {
   "name": "mongoose-history",
-  "version": "0.6.0",
-  "description": "Keeps a history of all changes of a document.",
+  "version": "0.7.0",
+  "description": "Keeps a history of all changes of a document (And the user who made those)",
   "main": "lib/mongoose-history.js",
   "files": [
     "lib/"
@@ -11,14 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nassor/mongoose-history"
+    "url": "https://github.com/NTHINGs/mongoose-history"
   },
   "keywords": [
     "mongoose",
     "history",
     "safe",
     "cqrs",
-    "backup"
+    "backup",
+    "user"
   ],
   "author": {
     "name": "Nassor Paulino da Silva",
@@ -47,22 +48,27 @@
     {
       "name": "Victor Parmar",
       "url": "https://smalldata.tech"
+    },
+    {
+      "name": "Mauricio Martinez",
+      "url": "https://github.com/NTHINGs"
     }
   ],
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/nassor/mongoose-history/issues"
+    "url": "https://github.com/NTHINGs/mongoose-history/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "async": "^2.6.0",
     "mongoose": "^4.0.0",
     "mocha": "2.4.5",
+    "request-context": "^2.0.0",
     "should": "8.2.2"
   },
   "peerDependencies": {
     "async": "^2.0.0",
-    "mongoose": "^4.0.0 || >=5.0.0"
+    "mongoose": "^4.0.0 || >=5.0.0",
+    "request-context": "^2.0.0"
   }
 }
