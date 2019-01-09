@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-history-user",
+  "name": "mongoose-history-user-featherjs",
   "version": "0.7.6",
   "description": "Keeps a history of all changes of a document (And the user who made those)",
   "main": "lib/mongoose-history.js",
