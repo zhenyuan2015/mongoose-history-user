@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/nassor/mongoose-history.svg?branch=master)](https://travis-ci.org/nassor/mongoose-history)
 
+Make it work for featherjs-mongoose update,for featherjs-mongoose use updateMany.
 Keeps a history of all changes of a document (And the user who made those).
 
 THIS IS A FORK FROM [mongoose-history](https://www.npmjs.com/package/mongoose-history)
